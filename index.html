@@ -6,8 +6,6 @@
   <title>Moments of Smile</title>
 
   <style>
-    html { scroll-behavior: smooth; }
-
     body {
       margin: 0;
       font-family: Arial, sans-serif;
@@ -16,7 +14,9 @@
       text-align: center;
     }
 
-    #menu-toggle { display: none; }
+    #menu-toggle {
+      display: none;
+    }
 
     .menu-button {
       position: fixed;
@@ -47,7 +47,9 @@
       text-align: left;
     }
 
-    #menu-toggle:checked ~ .side-menu { left: 0; }
+    #menu-toggle:checked ~ .side-menu {
+      left: 0;
+    }
 
     .side-menu a {
       display: block;
@@ -58,7 +60,9 @@
       font-size: 17px;
     }
 
-    header { padding: 85px 20px 40px; }
+    header {
+      padding: 90px 20px 50px;
+    }
 
     h1 {
       font-size: 42px;
@@ -66,12 +70,9 @@
       color: #b76e79;
     }
 
-    h2 { color: #b76e79; }
-
-    h3 {
-      color: #333;
-      margin-top: 8px;
-      margin-bottom: 8px;
+    h2 {
+      color: #b76e79;
+      margin-bottom: 12px;
     }
 
     p {
@@ -91,28 +92,9 @@
       box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     }
 
-    .project-card {
-      background: #fff5fb;
-      margin: 25px auto 0;
-      padding: 22px;
-      max-width: 650px;
-      border-radius: 20px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.06);
-    }
-
-    .status {
-      font-size: 14px;
-      font-weight: bold;
-      color: #b76e79;
-      margin-bottom: 8px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    a {
-      color: #b76e79;
-      font-weight: bold;
-      text-decoration: none;
+    .hint {
+      font-size: 16px;
+      color: #666;
     }
 
     footer {
@@ -130,10 +112,10 @@
   <label for="menu-toggle" class="menu-button">☰</label>
 
   <nav class="side-menu">
-    <a href="#scooping" onclick="document.getElementById('menu-toggle').checked = false;">Scooping Boxen</a>
-    <a href="#games" onclick="document.getElementById('menu-toggle').checked = false;">Games & Kartenspiele</a>
-    <a href="#kinder" onclick="document.getElementById('menu-toggle').checked = false;">Kinder & Malbücher</a>
-    <a href="#kontakt" onclick="document.getElementById('menu-toggle').checked = false;">Kontakt</a>
+    <a href="scooping.html">Scooping Boxen</a>
+    <a href="games.html">Games & Kartenspiele</a>
+    <a href="kinder.html">Kinder & Malbücher</a>
+    <a href="kontakt.html">Kontakt</a>
   </nav>
 
   <header>
@@ -142,70 +124,17 @@
   </header>
 
   <section class="box">
-    <h2>Bald geht es los</h2>
+    <h2>Willkommen</h2>
     <p>
-      Hier entsteht die offizielle Seite von Moments of Smile.
+      Hier entsteht die offizielle Webseite von Moments of Smile.
       Nach und nach findest du hier geplante Projekte rund um Scooping Boxen,
-      Games, Kartenspiele, Kinderbücher und Malbücher.
+      Games, Kartenspiele sowie Kinder- und Malbücher.
     </p>
     <p>
       Jede Idee soll ein kleiner Moment zum Lächeln sein.
     </p>
-  </section>
-
-  <section class="box" id="scooping">
-    <h2>Scooping Boxen</h2>
-    <div class="project-card">
-      <p class="status">Später geplant</p>
-      <h3>Moments of Smile Scooping Boxen</h3>
-      <p>
-        Die Scooping Boxen von Moments of Smile sind geplant.
-        Hier soll später alles rund um Überraschungsboxen,
-        das Scooping-System und liebevoll zusammengestellte Produkte entstehen.
-      </p>
-      <p>
-        Da dieses Projekt etwas größer ist, folgen weitere Infos zu einem späteren Zeitpunkt.
-      </p>
-    </div>
-  </section>
-
-  <section class="box" id="games">
-    <h2>Games & Kartenspiele</h2>
-    <div class="project-card">
-      <p class="status">In Planung</p>
-      <h3>Moments of Smile Kartenspiel</h3>
-      <p>
-        Ein eigenes Kartenspiel von Moments of Smile ist bereits in Planung.
-        Es soll Spaß machen, überraschen und kleine Momente zum Lächeln schenken.
-      </p>
-      <p>
-        Weitere Infos folgen bald.
-      </p>
-    </div>
-  </section>
-
-  <section class="box" id="kinder">
-    <h2>Kinder & Malbücher</h2>
-    <div class="project-card">
-      <p class="status">In Planung</p>
-      <h3>Kinderbücher und Malbücher</h3>
-      <p>
-        Auch Kinderbücher und Malbücher sind geplant.
-        Hier entsteht später Platz für kleine Geschichten,
-        kreative Ideen und liebevolle Projekte für Kinder.
-      </p>
-      <p>
-        Weitere Infos folgen bald.
-      </p>
-    </div>
-  </section>
-
-  <section class="box" id="kontakt">
-    <h2>Kontakt</h2>
-    <p>Du möchtest Fragen stellen oder auf dem Laufenden bleiben?</p>
-    <p>
-      E-Mail:
-      <a href="mailto:Moments_of_smile_official@web.de">Moments_of_smile_official@web.de</a>
+    <p class="hint">
+      Öffne oben links das Menü, um die einzelnen Bereiche zu entdecken.
     </p>
   </section>
 
