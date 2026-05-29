@@ -50,7 +50,20 @@
     #menu-toggle:checked ~ .side-menu {
       left: 0;
     }
+.menu-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.12);
+  z-index: 999;
+}
 
+#menu-toggle:checked ~ .menu-overlay {
+  display: block;
+}
     .side-menu a {
       display: block;
       color: #b76e79;
@@ -119,7 +132,7 @@
     <a href="malbuch.html">Malbuch</a>
     <a href="kontakt.html">Kontakt</a>
   </nav>
-
+<label for="menu-toggle" class="menu-overlay"></label>
   <header>
     <img src="MoSlogo.jpg" alt="Moments of Smile Logo" class="logo">
     <h1>Moments of Smile</h1>
