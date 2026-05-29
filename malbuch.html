@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Malbuch | Moments of Smile</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f8dff0, #dff7f6);
+      color: #333;
+      text-align: center;
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    .menu-button {
+      position: fixed;
+      top: 18px;
+      left: 18px;
+      z-index: 1001;
+      background: rgba(255,255,255,0.95);
+      color: #b76e79;
+      font-size: 30px;
+      padding: 8px 14px;
+      border-radius: 14px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.12);
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -280px;
+      width: 240px;
+      height: 100%;
+      background: rgba(255,255,255,0.98);
+      box-shadow: 5px 0 20px rgba(0,0,0,0.12);
+      padding: 80px 20px 30px;
+      z-index: 1000;
+      transition: left 0.3s ease;
+      text-align: left;
+    }
+
+    #menu-toggle:checked ~ .side-menu {
+      left: 0;
+    }
+
+    .side-menu a {
+      display: block;
+      color: #b76e79;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 20px 0;
+      font-size: 17px;
+    }
+
+    header {
+      padding: 90px 20px 40px;
+    }
+
+    .logo {
+      max-width: 160px;
+      margin-bottom: 20px;
+      border-radius: 0;
+      mix-blend-mode: multiply;
+    }
+
+    h1 {
+      font-size: 38px;
+      margin-bottom: 10px;
+      color: #b76e79;
+    }
+
+    h2 {
+      color: #b76e79;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      color: #333;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.6;
+      max-width: 750px;
+      margin: 15px auto;
+      padding: 0 20px;
+    }
+
+    .box {
+      background: rgba(255,255,255,0.75);
+      margin: 30px auto;
+      padding: 30px 20px;
+      max-width: 780px;
+      border-radius: 25px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+    }
+
+    .project-card {
+      background: #fff5fb;
+      margin: 25px auto 0;
+      padding: 22px;
+      max-width: 650px;
+      border-radius: 20px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.06);
+    }
+
+    .status {
+      font-size: 14px;
+      font-weight: bold;
+      color: #b76e79;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    a {
+      color: #b76e79;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 25px;
+      font-size: 14px;
+      color: #666;
+    }
+  </style>
+</head>
+
+<body>
+
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="menu-button">☰</label>
+
+  <nav class="side-menu">
+    <a href="index.html">Startseite</a>
+    <a href="games.html">Kartenspiel</a>
+    <a href="buch.html">Buch</a>
+    <a href="malbuch.html">Malbuch</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+
+  <header>
+    <img src="MoSlogo.jpg" alt="Moments of Smile Logo" class="logo">
+    <h1>Malbuch</h1>
+    <p>Hier entsteht Platz für mein Malbuch-Projekt von Moments of Smile.</p>
+  </header>
+
+  <section class="box">
+    <h2>Mein Malbuch</h2>
+
+    <div class="project-card">
+      <p class="status">In Planung</p>
+      <h3>Kreative Ausmalmomente entstehen</h3>
+      <p>
+        Ein eigenes Malbuch von Moments of Smile ist in Planung.
+        Es soll liebevolle Motive, kleine kreative Ideen und schöne Ausmalmomente enthalten.
+      </p>
+      <p>
+        Weitere Infos zu den Motiven, dem Stil und dem Erscheinungszeitpunkt folgen bald.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Moments of Smile
+  </footer>
+
+</body>
+</html>
