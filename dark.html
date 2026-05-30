@@ -9,7 +9,7 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #0f0b12, #1c1424, #2c1d2d);
+      background: linear-gradient(135deg, #070609, #14101a, #211728);
       color: #f2e9ee;
       text-align: center;
     }
@@ -31,7 +31,6 @@
       box-shadow: 0 5px 18px rgba(0,0,0,0.35);
       cursor: pointer;
       line-height: 1;
-      backdrop-filter: blur(4px);
     }
 
     .side-menu {
@@ -40,7 +39,7 @@
       left: -280px;
       width: 240px;
       height: 100%;
-      background: rgba(20, 16, 24, 0.97);
+      background: rgba(16, 12, 20, 0.98);
       box-shadow: 5px 0 20px rgba(0,0,0,0.35);
       padding: 80px 20px 30px;
       z-index: 1001;
@@ -52,15 +51,18 @@
       left: 0;
     }
 
-    .overlay {
+    .menu-overlay {
       display: none;
       position: fixed;
-      inset: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
       background: rgba(0,0,0,0.35);
       z-index: 1000;
     }
 
-    #menu-toggle:checked ~ .overlay {
+    #menu-toggle:checked ~ .menu-overlay {
       display: block;
     }
 
@@ -74,16 +76,18 @@
     }
 
     header {
-      padding: 90px 20px 40px;
+      padding: 90px 20px 45px;
     }
 
     .logo {
-      max-width: 170px;
-      margin-bottom: 20px;
+      max-width: 240px;
+      margin-bottom: 25px;
       border-radius: 0;
       display: block;
       margin-left: auto;
       margin-right: auto;
+      mix-blend-mode: lighten;
+      opacity: 0.92;
     }
 
     h1 {
@@ -168,15 +172,15 @@
     <a href="kontakt.html">Kontakt</a>
   </nav>
 
-  <label for="menu-toggle" class="overlay"></label>
+  <label for="menu-toggle" class="menu-overlay"></label>
 
   <header>
     <img src="Mosdark.png" alt="Moments of Dark Logo" class="logo">
     <h1>Moments of Dark</h1>
     <p>
       Die dunklere Seite von Moments of Smile.
-      Hier entsteht Platz für meine Thriller, düsteren Ideen
-      und alles, was geheimnisvoll, intensiv und emotional ist.
+      Hier entsteht Platz für meine Thriller, düsteren Ideen und alles,
+      was geheimnisvoll, intensiv und emotional ist.
     </p>
   </header>
 
@@ -192,7 +196,8 @@
         intensiveren, geheimnisvolleren Atmosphäre.
       </p>
       <p>
-        Weitere Infos zu Büchern, Projekten und Veröffentlichungen folgen bald.
+        Hier folgen später weitere Infos zu meinen Thrillern,
+        Buchprojekten und Veröffentlichungen.
       </p>
     </div>
   </section>
