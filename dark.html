@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Moments of Dark</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #0f0b12, #1c1424, #2c1d2d);
+      color: #f2e9ee;
+      text-align: center;
+    }
+
+    #menu-toggle {
+      display: none;
+    }
+
+    .menu-button {
+      position: fixed;
+      top: 18px;
+      left: 18px;
+      z-index: 1002;
+      background: rgba(255,255,255,0.10);
+      color: #d8b7c3;
+      font-size: 30px;
+      padding: 8px 14px;
+      border-radius: 14px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.35);
+      cursor: pointer;
+      line-height: 1;
+      backdrop-filter: blur(4px);
+    }
+
+    .side-menu {
+      position: fixed;
+      top: 0;
+      left: -280px;
+      width: 240px;
+      height: 100%;
+      background: rgba(20, 16, 24, 0.97);
+      box-shadow: 5px 0 20px rgba(0,0,0,0.35);
+      padding: 80px 20px 30px;
+      z-index: 1001;
+      transition: left 0.3s ease;
+      text-align: left;
+    }
+
+    #menu-toggle:checked ~ .side-menu {
+      left: 0;
+    }
+
+    .overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.35);
+      z-index: 1000;
+    }
+
+    #menu-toggle:checked ~ .overlay {
+      display: block;
+    }
+
+    .side-menu a {
+      display: block;
+      color: #d8b7c3;
+      font-weight: bold;
+      text-decoration: none;
+      margin: 20px 0;
+      font-size: 17px;
+    }
+
+    header {
+      padding: 90px 20px 40px;
+    }
+
+    .logo {
+      max-width: 170px;
+      margin-bottom: 20px;
+      border-radius: 0;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+      color: #e2c7d1;
+    }
+
+    h2 {
+      color: #e2c7d1;
+      margin-bottom: 12px;
+    }
+
+    h3 {
+      color: #ffffff;
+      margin-top: 8px;
+      margin-bottom: 8px;
+    }
+
+    p {
+      font-size: 18px;
+      line-height: 1.7;
+      max-width: 760px;
+      margin: 15px auto;
+      padding: 0 20px;
+      color: #f2e9ee;
+    }
+
+    .box {
+      background: rgba(255,255,255,0.08);
+      margin: 30px auto;
+      padding: 30px 20px;
+      max-width: 780px;
+      border-radius: 25px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+    }
+
+    .project-card {
+      background: rgba(255,255,255,0.06);
+      margin: 25px auto 0;
+      padding: 22px;
+      max-width: 650px;
+      border-radius: 20px;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.18);
+    }
+
+    .status {
+      font-size: 14px;
+      font-weight: bold;
+      color: #d8b7c3;
+      margin-bottom: 8px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    a {
+      color: #e2c7d1;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding: 25px;
+      font-size: 14px;
+      color: #c8b8bf;
+    }
+  </style>
+</head>
+
+<body>
+
+  <input type="checkbox" id="menu-toggle">
+  <label for="menu-toggle" class="menu-button">☰</label>
+
+  <nav class="side-menu">
+    <a href="index.html">Startseite</a>
+    <a href="games.html">Kartenspiel</a>
+    <a href="buch.html">Buch</a>
+    <a href="malbuch.html">Malbuch</a>
+    <a href="dark.html">Moments of Dark</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
+
+  <label for="menu-toggle" class="overlay"></label>
+
+  <header>
+    <img src="Mosdark.png" alt="Moments of Dark Logo" class="logo">
+    <h1>Moments of Dark</h1>
+    <p>
+      Die dunklere Seite von Moments of Smile.
+      Hier entsteht Platz für meine Thriller, düsteren Ideen
+      und alles, was geheimnisvoll, intensiv und emotional ist.
+    </p>
+  </header>
+
+  <section class="box">
+    <h2>Thriller & düstere Projekte</h2>
+
+    <div class="project-card">
+      <p class="status">In Planung</p>
+      <h3>Psychothriller und dunkle Geschichten</h3>
+      <p>
+        Unter Moments of Dark entstehen düstere Buchideen,
+        spannende Geschichten und emotionale Projekte mit einer
+        intensiveren, geheimnisvolleren Atmosphäre.
+      </p>
+      <p>
+        Weitere Infos zu Büchern, Projekten und Veröffentlichungen folgen bald.
+      </p>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Moments of Dark
+  </footer>
+
+</body>
+</html>
