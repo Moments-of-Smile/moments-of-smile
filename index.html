@@ -22,7 +22,7 @@
       position: fixed;
       top: 18px;
       left: 18px;
-      z-index: 1001;
+      z-index: 1002;
       background: rgba(255,255,255,0.95);
       color: #b76e79;
       font-size: 30px;
@@ -42,7 +42,7 @@
       background: rgba(255,255,255,0.98);
       box-shadow: 5px 0 20px rgba(0,0,0,0.12);
       padding: 80px 20px 30px;
-      z-index: 1000;
+      z-index: 1001;
       transition: left 0.3s ease;
       text-align: left;
     }
@@ -50,20 +50,22 @@
     #menu-toggle:checked ~ .side-menu {
       left: 0;
     }
-.menu-overlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.12);
-  z-index: 999;
-}
 
-#menu-toggle:checked ~ .menu-overlay {
-  display: block;
-}
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.12);
+      z-index: 1000;
+    }
+
+    #menu-toggle:checked ~ .menu-overlay {
+      display: block;
+    }
+
     .side-menu a {
       display: block;
       color: #b76e79;
@@ -127,12 +129,16 @@
   <label for="menu-toggle" class="menu-button">☰</label>
 
   <nav class="side-menu">
+    <a href="index.html">Startseite</a>
     <a href="games.html">Kartenspiel</a>
     <a href="buch.html">Buch</a>
     <a href="malbuch.html">Malbuch</a>
+    <a href="dark.html">Moments of Dark</a>
     <a href="kontakt.html">Kontakt</a>
   </nav>
-<label for="menu-toggle" class="menu-overlay"></label>
+
+  <label for="menu-toggle" class="menu-overlay"></label>
+
   <header>
     <img src="MoSlogo.jpg" alt="Moments of Smile Logo" class="logo">
     <h1>Moments of Smile</h1>
@@ -146,7 +152,7 @@
       Aktuell stehen vor allem mein Kartenspiel, mein Buch und mein Malbuch im Mittelpunkt.
     </p>
     <p>
-      Nach und nach findest du hier mehr Infos zu meinen kreativen Projekten.
+      Unter Moments of Dark entsteht außerdem Platz für meine düsteren Buchideen und Thriller-Projekte.
     </p>
     <p>
       Jede Idee soll ein kleiner Moment zum Lächeln sein.
