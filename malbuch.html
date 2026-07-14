@@ -107,7 +107,8 @@
       padding: 20px;
     }
 
-    .book-box, .preview-box {
+    .book-box,
+    .preview-box {
       background: rgba(255, 255, 255, 0.88);
       border-radius: 28px;
       padding: 28px;
@@ -145,7 +146,8 @@
       margin: 0 auto 30px;
     }
 
-    .order-title {
+    .order-title,
+    .preview-title {
       color: #b76e79;
       margin-top: 35px;
       margin-bottom: 15px;
@@ -172,6 +174,7 @@
       max-width: 360px;
       box-sizing: border-box;
       transition: 0.2s;
+      margin-top: 8px;
     }
 
     .button:hover {
@@ -184,43 +187,30 @@
       color: #5a3a40;
     }
 
-    .preview-title {
-      color: #b76e79;
-      font-size: 28px;
-      margin-bottom: 10px;
-    }
-
-    .preview-text {
-      font-size: 17px;
-      line-height: 1.6;
-      max-width: 720px;
-      margin: 0 auto 28px;
-    }
-
     .preview-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 24px;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 22px;
       margin-top: 25px;
     }
 
     .preview-card {
       background: rgba(255,255,255,0.9);
-      border-radius: 24px;
+      border-radius: 22px;
       padding: 18px;
       box-shadow: 0 6px 18px rgba(0,0,0,0.08);
     }
 
     .preview-card img {
       width: 100%;
-      border-radius: 16px;
+      border-radius: 14px;
       box-shadow: 0 5px 16px rgba(0,0,0,0.12);
-      margin-bottom: 15px;
+      margin-bottom: 12px;
     }
 
     .preview-card h3 {
       color: #b76e79;
-      margin: 8px 0 8px;
+      margin: 8px 0 6px;
       font-size: 20px;
     }
 
@@ -228,6 +218,15 @@
       font-size: 15px;
       line-height: 1.5;
       color: #555;
+      margin: 0 0 12px;
+    }
+
+    .download-note {
+      font-size: 15px;
+      color: #666;
+      max-width: 700px;
+      margin: 10px auto 0;
+      line-height: 1.6;
     }
 
     footer {
@@ -303,42 +302,52 @@
   <section class="preview-box">
     <h2 class="preview-title">Ein kleiner Blick ins Kreativbuch</h2>
 
-    <p class="preview-text">
-      Hier siehst du ein paar Beispielseiten aus dem Kreativbuch. So bekommen Kinder und Eltern direkt einen kleinen Eindruck davon, was im Glitzerwald alles wartet.
+    <p class="download-note">
+      Hier bekommst du einen kleinen Einblick in das Kreativbuch. Eine Seite darf kostenlos heruntergeladen und ausgedruckt werden.
     </p>
 
     <div class="preview-grid">
 
       <div class="preview-card">
-        <img src="Male ein kuscheltier wettbewerb.png" alt="Male ein Kuscheltier für Willow oder Pip">
-        <h3>Male ein Kuscheltier</h3>
+        <img src="Male%20ein%20kuscheltier%20wettbewerb.png" alt="Kostenlose Mitmachseite Male ein Kuscheltier">
+
+        <h3>Gratis-Mitmachseite</h3>
+
         <p>
-          Diese Mitmachseite darf kostenlos heruntergeladen, ausgedruckt und ausgefüllt werden.
+          Male ein Kuscheltier für Willow oder Pip. Diese Seite darf kostenlos heruntergeladen und ausgedruckt werden.
         </p>
-        <a class="button" href="Male ein kuscheltier wettbewerb.png" download>
-          Kostenlos herunterladen & ausdrucken
+
+        <a class="button" href="Male%20ein%20kuscheltier%20wettbewerb.png" download>
+          Seite herunterladen
+        </a>
+
+        <a class="button secondary" href="glitzerfreunde-mitmachen/">
+          Zur Mitmachaktion
         </a>
       </div>
 
       <div class="preview-card">
-        <img src="Liliana-MalenNachZahlen.png" alt="Malen nach Zahlen mit Liliana">
+        <img src="Liliana-MalenNachZahlen.png" alt="Vorschau Malen nach Zahlen Liliana">
+
         <h3>Malen nach Zahlen</h3>
+
         <p>
-          Eine Beispielseite aus dem Kreativbuch mit kleinen Farbvorgaben zum Ausmalen.
+          Eine Beispielseite aus dem Kreativbuch mit Liliana zum Ausmalen nach Zahlen.
         </p>
       </div>
 
       <div class="preview-card">
-        <img src="Wimmelbild.png" alt="Wimmelbild Schnecken suchen">
+        <img src="Wimmelbild.png" alt="Vorschau Wimmelbild Schnecken suchen">
+
         <h3>Wimmelbild</h3>
+
         <p>
-          Eine Suchseite aus dem Glitzerwald, bei der kleine Dinge entdeckt werden können.
+          Eine Suchseite aus dem Glitzerwald: Kannst du die Schnecken finden?
         </p>
       </div>
 
     </div>
   </section>
-
 </main>
 
 <footer>
