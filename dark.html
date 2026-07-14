@@ -3,208 +3,232 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Moments of Dark</title>
+  <title>Moments of Dark | Moments of Smile</title>
 
   <style>
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #070609, #14101a, #211728);
-      color: #f2e9ee;
-      text-align: center;
+      background: linear-gradient(135deg, #1b1b1f, #3b1f2b);
+      color: #f5f0f2;
     }
 
-    #menu-toggle {
+    /* Burger Menü */
+    .menu-toggle {
       display: none;
     }
 
-    .menu-button {
+    .hamburger {
       position: fixed;
       top: 18px;
       left: 18px;
-      z-index: 1002;
-      background: rgba(255,255,255,0.10);
-      color: #d8b7c3;
-      font-size: 30px;
-      padding: 8px 14px;
-      border-radius: 14px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.35);
+      z-index: 1001;
+      width: 36px;
+      height: 28px;
       cursor: pointer;
-      line-height: 1;
     }
 
-    .side-menu {
+    .hamburger span {
+      display: block;
+      height: 4px;
+      background: #d8a0aa;
+      margin: 6px 0;
+      border-radius: 4px;
+    }
+
+    nav {
       position: fixed;
       top: 0;
-      left: -280px;
+      left: -270px;
       width: 240px;
       height: 100%;
-      background: rgba(16, 12, 20, 0.98);
-      box-shadow: 5px 0 20px rgba(0,0,0,0.35);
-      padding: 80px 20px 30px;
-      z-index: 1001;
-      transition: left 0.3s ease;
-      text-align: left;
+      background: #151518;
+      box-shadow: 4px 0 18px rgba(0,0,0,0.45);
+      padding-top: 80px;
+      transition: 0.3s;
+      z-index: 1000;
     }
 
-    #menu-toggle:checked ~ .side-menu {
-      left: 0;
+    nav a {
+      display: block;
+      padding: 16px 24px;
+      color: #f2c2ca;
+      text-decoration: none;
+      font-weight: bold;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    nav a:hover {
+      background: rgba(255,255,255,0.08);
     }
 
     .menu-overlay {
       display: none;
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      inset: 0;
       background: rgba(0,0,0,0.35);
-      z-index: 1000;
+      z-index: 999;
     }
 
-    #menu-toggle:checked ~ .menu-overlay {
-      display: block;
+    .menu-toggle:checked ~ nav {
+      left: 0;
     }
 
-    .side-menu a {
+    .menu-toggle:checked ~ .menu-overlay {
       display: block;
-      color: #d8b7c3;
-      font-weight: bold;
-      text-decoration: none;
-      margin: 20px 0;
-      font-size: 17px;
     }
 
     header {
-      padding: 90px 20px 45px;
+      text-align: center;
+      padding: 55px 20px 25px;
     }
 
     .logo {
-      max-width: 240px;
-      margin-bottom: 25px;
-      border-radius: 0;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-      mix-blend-mode: lighten;
-      opacity: 0.92;
-    }
-
-    h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-      color: #e2c7d1;
-    }
-
-    h2 {
-      color: #e2c7d1;
+      max-width: 230px;
       margin-bottom: 12px;
     }
 
-    h3 {
-      color: #ffffff;
-      margin-top: 8px;
+    h1 {
+      color: #f2c2ca;
+      font-size: 38px;
       margin-bottom: 8px;
+      letter-spacing: 1px;
     }
 
-    p {
+    .subtitle {
       font-size: 18px;
-      line-height: 1.7;
-      max-width: 760px;
-      margin: 15px auto;
-      padding: 0 20px;
-      color: #f2e9ee;
+      color: #d8c5ca;
+      margin-top: 0;
+    }
+
+    main {
+      max-width: 950px;
+      margin: 0 auto;
+      padding: 20px;
     }
 
     .box {
       background: rgba(255,255,255,0.08);
-      margin: 30px auto;
-      padding: 30px 20px;
-      max-width: 780px;
-      border-radius: 25px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 28px;
+      padding: 28px;
+      text-align: center;
+      box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+      margin-bottom: 30px;
+      backdrop-filter: blur(4px);
     }
 
-    .project-card {
-      background: rgba(255,255,255,0.06);
-      margin: 25px auto 0;
-      padding: 22px;
-      max-width: 650px;
-      border-radius: 20px;
-      box-shadow: 0 5px 18px rgba(0,0,0,0.18);
+    .box h2 {
+      color: #f2c2ca;
+      margin-top: 0;
+      font-size: 28px;
     }
 
-    .status {
-      font-size: 14px;
-      font-weight: bold;
-      color: #d8b7c3;
-      margin-bottom: 8px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
+    .box p {
+      font-size: 17px;
+      line-height: 1.7;
+      max-width: 720px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #f4e8eb;
     }
 
-    a {
-      color: #e2c7d1;
-      font-weight: bold;
+    .note {
+      margin-top: 20px;
+      font-size: 15px;
+      color: #c9b6bb;
+    }
+
+    .button {
+      display: inline-block;
+      background: #8f3d52;
+      color: white;
       text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: bold;
+      width: 100%;
+      max-width: 340px;
+      box-sizing: border-box;
+      transition: 0.2s;
+      margin-top: 14px;
+    }
+
+    .button:hover {
+      background: #a94d63;
+      transform: scale(1.02);
     }
 
     footer {
-      margin-top: 40px;
-      padding: 25px;
+      text-align: center;
+      padding: 35px 20px;
+      color: #bdaab0;
       font-size: 14px;
-      color: #c8b8bf;
     }
   </style>
 </head>
 
 <body>
 
-  <input type="checkbox" id="menu-toggle">
-  <label for="menu-toggle" class="menu-button">☰</label>
+<input type="checkbox" id="menu-toggle" class="menu-toggle">
 
-  <nav class="side-menu">
-    <a href="index.html">Startseite</a>
-    <a href="games.html">Kartenspiel</a>
-    <a href="buch.html">Buch</a>
-    <a href="malbuch.html">Malbuch</a>
-    <a href="dark.html">Moments of Dark</a>
-    <a href="kontakt.html">Kontakt</a>
-  </nav>
+<label for="menu-toggle" class="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</label>
 
-  <label for="menu-toggle" class="menu-overlay"></label>
+<nav>
+  <a href="index.html">Startseite</a>
+  <a href="buch.html">Buch</a>
+  <a href="malbuch.html">Kreativbuch</a>
+  <a href="dark.html">Moments of Dark</a>
+  <a href="kontakt.html">Kontakt</a>
+</nav>
 
-  <header>
-    <img src="Mosdark.png" alt="Moments of Dark Logo" class="logo">
-    <h1>Moments of Dark</h1>
-    <p>
-      Die dunklere Seite von Moments of Smile.
-      Hier entsteht Platz für meine Thriller, düsteren Ideen und alles,
-      was geheimnisvoll, intensiv und emotional ist.
-    </p>
-  </header>
+<label for="menu-toggle" class="menu-overlay"></label>
+
+<header>
+  <img src="Mosdark.png" alt="Moments of Dark Logo" class="logo">
+  <h1>Moments of Dark</h1>
+  <p class="subtitle">Dunklere Geschichten, Thriller und Buchprojekte für Erwachsene</p>
+</header>
+
+<main>
 
   <section class="box">
-    <h2>Thriller & düstere Projekte</h2>
-
-    <div class="project-card">
-      <p class="status">In Planung</p>
-      <h3>Psychothriller und dunkle Geschichten</h3>
-      <p>
-        Unter Moments of Dark entstehen düstere Buchideen,
-        spannende Geschichten und emotionale Projekte mit einer
-        intensiveren, geheimnisvolleren Atmosphäre.
-      </p>
-      <p>
-        Hier folgen später weitere Infos zu meinen Thrillern,
-        Buchprojekten und Veröffentlichungen.
-      </p>
-    </div>
+    <h2>Willkommen bei Moments of Dark</h2>
+    <p>
+      Moments of Dark ist der Bereich für meine düsteren Buchprojekte, Psychothriller,
+      Dark Romance und Geschichten, die nicht für Kinder gedacht sind.
+    </p>
+    <p>
+      Hier entstehen später eigene Seiten zu meinen Erwachsenenbüchern, Charakteren,
+      Projekten und Veröffentlichungen.
+    </p>
   </section>
 
-  <footer>
-    © 2026 Moments of Dark
-  </footer>
-<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6b6511cdbb4c4d9281f651eef4886800"}'></script><!-- End Cloudflare Web Analytics -->
+  <section class="box">
+    <h2>Hinweis</h2>
+    <p>
+      Dieser Bereich richtet sich an erwachsene Leserinnen und Leser. Kinderbücher,
+      Kreativbücher und die Glitzerfreunde findest du im Moments of Smile Kids Bereich.
+    </p>
+
+    <a class="button" href="buch.html">
+      Zu den Kinderbüchern
+    </a>
+  </section>
+
+</main>
+
+<footer>
+  © 2026 Moments of Dark
+</footer>
+
+<!-- Cloudflare Web Analytics -->
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6b6511cdbb4c4d9281f651eef4886800"}'></script>
+<!-- End Cloudflare Web Analytics -->
+
 </body>
 </html>
