@@ -12,25 +12,26 @@
 
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      color: #ffffff;
+      font-family: "Segoe UI", Arial, sans-serif;
+      color: #f7f2f5;
       background:
-        radial-gradient(circle at top, rgba(82, 43, 62, 0.35), transparent 40%),
-        linear-gradient(180deg, #09070d 0%, #120d18 45%, #1c1220 100%);
+        radial-gradient(circle at top center, rgba(120, 70, 95, 0.30) 0%, rgba(120, 70, 95, 0) 38%),
+        linear-gradient(180deg, #171219 0%, #120e14 35%, #181118 100%);
+      min-height: 100vh;
     }
 
-    /* Burger-Menü */
+    /* Menü */
     .menu-toggle {
       display: none;
     }
 
     .hamburger {
       position: fixed;
-      top: 28px;
-      left: 28px;
-      width: 64px;
-      height: 64px;
-      background: rgba(45, 38, 52, 0.88);
+      top: 24px;
+      left: 24px;
+      width: 66px;
+      height: 66px;
+      background: rgba(38, 33, 40, 0.72);
       border-radius: 22px;
       display: flex;
       flex-direction: column;
@@ -39,49 +40,48 @@
       gap: 7px;
       cursor: pointer;
       z-index: 1002;
-      box-shadow: 0 10px 26px rgba(0,0,0,0.35);
-      backdrop-filter: blur(6px);
+      backdrop-filter: blur(8px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.25);
     }
 
     .hamburger span {
-      display: block;
       width: 32px;
       height: 5px;
-      background: #e5b7c6;
+      background: #e8b9c8;
       border-radius: 999px;
+      display: block;
     }
 
     nav {
       position: fixed;
       top: 0;
-      left: -280px;
+      left: -270px;
       width: 240px;
       height: 100%;
-      background: #15121b;
-      padding-top: 95px;
+      background: rgba(20, 16, 22, 0.97);
+      padding-top: 100px;
       transition: left 0.3s ease;
       z-index: 1001;
-      box-shadow: 8px 0 30px rgba(0,0,0,0.35);
     }
 
     nav a {
       display: block;
       padding: 16px 24px;
-      color: #f2d8df;
+      color: #f3d8e1;
       text-decoration: none;
-      font-weight: bold;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-weight: 500;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
     }
 
     nav a:hover {
-      background: rgba(255,255,255,0.06);
+      background: rgba(255,255,255,0.05);
     }
 
     .menu-overlay {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.38);
+      background: rgba(0,0,0,0.35);
       z-index: 1000;
     }
 
@@ -93,163 +93,201 @@
       display: block;
     }
 
-    header {
+    /* Kopfbereich */
+    .hero {
       text-align: center;
-      padding: 90px 20px 40px;
-      max-width: 1000px;
+      padding: 70px 20px 30px;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
-    .logo-ring {
-      width: 210px;
-      height: 210px;
-      margin: 0 auto 28px;
+    .logo-wrap {
+      width: 170px;
+      height: 170px;
+      margin: 0 auto 22px;
       border-radius: 50%;
-      padding: 4px;
-      background: rgba(255,255,255,0.28);
-      box-shadow: 0 0 0 2px rgba(255,255,255,0.10), 0 12px 28px rgba(0,0,0,0.35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: transparent;
     }
 
     .logo {
-      width: 100%;
-      height: 100%;
-      display: block;
+      width: 170px;
+      height: 170px;
       object-fit: cover;
       border-radius: 50%;
+      display: block;
     }
 
     h1 {
-      margin: 0 0 10px;
-      font-size: 58px;
+      margin: 0 0 8px;
+      font-size: 70px;
       line-height: 1.05;
-      color: #f4d1dc;
-      font-weight: 800;
+      font-weight: 700;
+      color: #fff6fa;
+      letter-spacing: 0.2px;
     }
 
     .subtitle {
       margin: 0;
       font-size: 22px;
-      color: #f2f2f2;
       font-weight: 500;
+      color: #f3edf0;
     }
 
+    /* Inhalt */
     main {
-      max-width: 1100px;
+      max-width: 1150px;
       margin: 0 auto;
-      padding: 10px 20px 60px;
+      padding: 10px 18px 50px;
     }
 
-    .card {
-      background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 26px;
-      padding: 34px 28px;
-      margin: 0 auto 28px;
+    .intro-box {
+      margin: 26px auto 24px;
+      max-width: 1100px;
+      background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.14) 0%,
+        rgba(255,255,255,0.08) 100%
+      );
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 32px 32px 0 0;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+      padding: 38px 34px 34px;
       backdrop-filter: blur(4px);
     }
 
-    .card h2 {
-      margin-top: 0;
-      margin-bottom: 22px;
-      font-size: 34px;
-      color: #f4d1dc;
+    .intro-box h2 {
+      margin: 0 0 24px;
+      font-size: 38px;
       line-height: 1.2;
+      font-weight: 700;
+      color: #fff6fa;
     }
 
-    .card p {
+    .intro-box p {
+      margin: 0 0 18px;
       font-size: 20px;
-      line-height: 1.8;
-      margin: 0 auto 22px;
-      max-width: 860px;
-      color: #ffffff;
+      line-height: 1.75;
+      font-weight: 500;
+      color: #f6f1f4;
     }
 
-    .small-card {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.08);
-      border-radius: 22px;
-      padding: 24px;
-      margin-top: 18px;
+    .section-blend {
+      margin: 0 auto;
+      max-width: 1100px;
+      background: linear-gradient(
+        180deg,
+        rgba(255,255,255,0.09) 0%,
+        rgba(255,255,255,0.05) 100%
+      );
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 0 0 32px 32px;
       text-align: center;
+      padding: 36px 28px 42px;
+      margin-top: -2px;
     }
 
-    .small-card h3 {
-      margin-top: 0;
-      margin-bottom: 14px;
-      font-size: 26px;
-      color: #f4d1dc;
+    .section-blend h3 {
+      margin: 0 0 18px;
+      font-size: 34px;
+      font-weight: 700;
+      color: #f3cedb;
     }
 
-    .small-card p {
-      font-size: 18px;
-      line-height: 1.7;
-      margin: 0;
-    }
-
-    .button {
-      display: inline-block;
-      margin-top: 12px;
-      padding: 14px 24px;
-      border-radius: 999px;
-      background: #9d5a73;
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      font-size: 17px;
-    }
-
-    .button:hover {
-      background: #b96d89;
+    .section-blend p {
+      margin: 0 auto;
+      max-width: 850px;
+      font-size: 19px;
+      line-height: 1.75;
+      font-weight: 400;
+      color: #f6f2f4;
     }
 
     footer {
       text-align: center;
-      padding: 30px 20px 40px;
-      color: rgba(255,255,255,0.72);
+      padding: 26px 20px 36px;
       font-size: 14px;
+      color: rgba(255,255,255,0.72);
     }
 
-    @media (max-width: 768px) {
-      header {
-        padding-top: 115px;
+    @media (max-width: 900px) {
+      .hero {
+        padding-top: 110px;
       }
 
-      .logo-ring {
-        width: 175px;
-        height: 175px;
-        margin-bottom: 22px;
+      .logo-wrap,
+      .logo {
+        width: 150px;
+        height: 150px;
       }
 
       h1 {
-        font-size: 38px;
+        font-size: 56px;
       }
 
       .subtitle {
-        font-size: 17px;
+        font-size: 19px;
+      }
+
+      .intro-box h2,
+      .section-blend h3 {
+        font-size: 32px;
+      }
+
+      .intro-box p,
+      .section-blend p {
+        font-size: 18px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hamburger {
+        width: 62px;
+        height: 62px;
+        top: 18px;
+        left: 18px;
+      }
+
+      .hero {
+        padding-top: 105px;
+      }
+
+      .logo-wrap,
+      .logo {
+        width: 130px;
+        height: 130px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .subtitle {
+        font-size: 16px;
         line-height: 1.5;
       }
 
-      .card {
-        padding: 28px 20px;
+      .intro-box {
+        padding: 28px 18px 24px;
+        border-radius: 26px 26px 0 0;
       }
 
-      .card h2 {
-        font-size: 28px;
+      .section-blend {
+        padding: 26px 18px 30px;
+        border-radius: 0 0 26px 26px;
       }
 
-      .card p {
-        font-size: 17px;
-        line-height: 1.8;
+      .intro-box h2,
+      .section-blend h3 {
+        font-size: 25px;
       }
 
-      .small-card h3 {
-        font-size: 22px;
-      }
-
-      .small-card p {
+      .intro-box p,
+      .section-blend p {
         font-size: 16px;
+        line-height: 1.7;
       }
     }
   </style>
@@ -274,38 +312,34 @@
 
   <label for="menu-toggle" class="menu-overlay"></label>
 
-  <header>
-    <div class="logo-ring">
+  <section class="hero">
+    <div class="logo-wrap">
       <img src="Mosdark.png" alt="Moments of Dark Logo" class="logo">
     </div>
-
     <h1>Moments of Dark</h1>
     <p class="subtitle">Dunklere Geschichten, Thriller und Buchprojekte für Erwachsene</p>
-  </header>
+  </section>
 
   <main>
-    <section class="card">
+    <section class="intro-box">
       <h2>Willkommen bei Moments of Dark</h2>
       <p>
-        Moments of Dark ist der Bereich für meine düsteren Buchprojekte, Psychothriller,
-        Dark Romance und Geschichten, die nicht für Kinder gedacht sind.
+        Moments of Dark ist der Bereich für meine düsteren Buchprojekte,
+        Psychothriller, Dark Romance und Geschichten, die nicht für Kinder gedacht sind.
       </p>
       <p>
-        Hier entstehen später eigene Seiten zu meinen Erwachsenenbüchern, Charakteren,
-        Projekten und Veröffentlichungen.
+        Hier entstehen später eigene Seiten zu meinen Erwachsenenbüchern,
+        Charakteren, Projekten und Veröffentlichungen.
       </p>
     </section>
 
-    <section class="card">
-      <h2>Thriller &amp; düstere Projekte</h2>
-
-      <div class="small-card">
-        <h3>Demnächst mehr</h3>
-        <p>
-          Hier findest du später Infos zu meinen Projekten aus dem Bereich
-          Psychothriller, Dark Romance und weiteren düsteren Geschichten.
-        </p>
-      </div>
+    <section class="section-blend">
+      <h3>Thriller & düstere Projekte</h3>
+      <p>
+        Dieser Bereich wächst nach und nach weiter. Später findest du hier
+        mehr zu meinen Geschichten, Figuren und Veröffentlichungen aus dem
+        Bereich Moments of Dark.
+      </p>
     </section>
   </main>
 
@@ -313,7 +347,6 @@
     © 2026 Moments of Smile / Moments of Dark
   </footer>
 
-  <!-- Cloudflare Web Analytics -->
   <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
     data-cf-beacon='{"token": "6b6511cdbb4c4d9281f651eef4886800"}'></script>
 
