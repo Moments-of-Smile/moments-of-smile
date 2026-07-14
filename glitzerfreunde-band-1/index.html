@@ -13,9 +13,74 @@
       color: #333;
     }
 
+    /* Burger Menü */
+    .menu-toggle {
+      display: none;
+    }
+
+    .hamburger {
+      position: fixed;
+      top: 18px;
+      left: 18px;
+      z-index: 1001;
+      width: 36px;
+      height: 28px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 4px;
+      background: #b76e79;
+      margin: 6px 0;
+      border-radius: 4px;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: -270px;
+      width: 240px;
+      height: 100%;
+      background: white;
+      box-shadow: 4px 0 15px rgba(0,0,0,0.15);
+      padding-top: 80px;
+      transition: 0.3s;
+      z-index: 1000;
+    }
+
+    nav a {
+      display: block;
+      padding: 16px 24px;
+      color: #b76e79;
+      text-decoration: none;
+      font-weight: bold;
+      border-bottom: 1px solid #f1d7dd;
+    }
+
+    nav a:hover {
+      background: #f8dff0;
+    }
+
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.15);
+      z-index: 999;
+    }
+
+    .menu-toggle:checked ~ nav {
+      left: 0;
+    }
+
+    .menu-toggle:checked ~ .menu-overlay {
+      display: block;
+    }
+
     header {
       text-align: center;
-      padding: 35px 20px 20px;
+      padding: 45px 20px 20px;
     }
 
     .logo {
@@ -136,6 +201,25 @@
 </head>
 
 <body>
+
+<input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+<label for="menu-toggle" class="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</label>
+
+<nav>
+  <a href="../index.html">Startseite</a>
+  <a href="../games.html">Kartenspiel</a>
+  <a href="../buch.html">Buch</a>
+  <a href="../malbuch.html">Malbuch</a>
+  <a href="../dark.html">Moments of Dark</a>
+  <a href="../kontakt.html">Kontakt</a>
+</nav>
+
+<label for="menu-toggle" class="menu-overlay"></label>
 
 <header>
   <img src="../Moskids.png" alt="Moments of Smile Kids Logo" class="logo">
