@@ -6,68 +6,83 @@
   <title>Moments of Dark | Moments of Smile</title>
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #1b1b1f, #3b1f2b);
-      color: #f5f0f2;
+      color: #ffffff;
+      background:
+        radial-gradient(circle at top, rgba(82, 43, 62, 0.35), transparent 40%),
+        linear-gradient(180deg, #09070d 0%, #120d18 45%, #1c1220 100%);
     }
 
-    /* Burger Menü */
+    /* Burger-Menü */
     .menu-toggle {
       display: none;
     }
 
     .hamburger {
       position: fixed;
-      top: 18px;
-      left: 18px;
-      z-index: 1001;
-      width: 36px;
-      height: 28px;
+      top: 28px;
+      left: 28px;
+      width: 64px;
+      height: 64px;
+      background: rgba(45, 38, 52, 0.88);
+      border-radius: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 7px;
       cursor: pointer;
+      z-index: 1002;
+      box-shadow: 0 10px 26px rgba(0,0,0,0.35);
+      backdrop-filter: blur(6px);
     }
 
     .hamburger span {
       display: block;
-      height: 4px;
-      background: #d8a0aa;
-      margin: 6px 0;
-      border-radius: 4px;
+      width: 32px;
+      height: 5px;
+      background: #e5b7c6;
+      border-radius: 999px;
     }
 
     nav {
       position: fixed;
       top: 0;
-      left: -270px;
+      left: -280px;
       width: 240px;
       height: 100%;
-      background: #151518;
-      box-shadow: 4px 0 18px rgba(0,0,0,0.45);
-      padding-top: 80px;
-      transition: 0.3s;
-      z-index: 1000;
+      background: #15121b;
+      padding-top: 95px;
+      transition: left 0.3s ease;
+      z-index: 1001;
+      box-shadow: 8px 0 30px rgba(0,0,0,0.35);
     }
 
     nav a {
       display: block;
       padding: 16px 24px;
-      color: #f2c2ca;
+      color: #f2d8df;
       text-decoration: none;
       font-weight: bold;
       border-bottom: 1px solid rgba(255,255,255,0.08);
     }
 
     nav a:hover {
-      background: rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.06);
     }
 
     .menu-overlay {
       display: none;
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.35);
-      z-index: 999;
+      background: rgba(0,0,0,0.38);
+      z-index: 1000;
     }
 
     .menu-toggle:checked ~ nav {
@@ -80,156 +95,227 @@
 
     header {
       text-align: center;
-      padding: 55px 20px 25px;
+      padding: 90px 20px 40px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    .logo-ring {
+      width: 210px;
+      height: 210px;
+      margin: 0 auto 28px;
+      border-radius: 50%;
+      padding: 4px;
+      background: rgba(255,255,255,0.28);
+      box-shadow: 0 0 0 2px rgba(255,255,255,0.10), 0 12px 28px rgba(0,0,0,0.35);
     }
 
     .logo {
-      width: 220px;
-      height: 220px;
+      width: 100%;
+      height: 100%;
+      display: block;
       object-fit: cover;
       border-radius: 50%;
-      display: block;
-      margin: 0 auto 18px;
-      opacity: 0.96;
-      box-shadow: 0 0 25px rgba(0,0,0,0.35);
-      border: 3px solid rgba(242, 194, 202, 0.18);
     }
 
     h1 {
-      color: #f2c2ca;
-      font-size: 38px;
-      margin-bottom: 8px;
-      letter-spacing: 1px;
+      margin: 0 0 10px;
+      font-size: 58px;
+      line-height: 1.05;
+      color: #f4d1dc;
+      font-weight: 800;
     }
 
     .subtitle {
-      font-size: 18px;
-      color: #d8c5ca;
-      margin-top: 0;
+      margin: 0;
+      font-size: 22px;
+      color: #f2f2f2;
+      font-weight: 500;
     }
 
     main {
-      max-width: 950px;
+      max-width: 1100px;
       margin: 0 auto;
-      padding: 20px;
+      padding: 10px 20px 60px;
     }
 
-    .box {
-      background: rgba(255,255,255,0.08);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 28px;
-      padding: 28px;
+    .card {
+      background: rgba(255,255,255,0.10);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 26px;
+      padding: 34px 28px;
+      margin: 0 auto 28px;
       text-align: center;
-      box-shadow: 0 8px 28px rgba(0,0,0,0.25);
-      margin-bottom: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.18);
       backdrop-filter: blur(4px);
     }
 
-    .box h2 {
-      color: #f2c2ca;
+    .card h2 {
       margin-top: 0;
-      font-size: 28px;
+      margin-bottom: 22px;
+      font-size: 34px;
+      color: #f4d1dc;
+      line-height: 1.2;
     }
 
-    .box p {
-      font-size: 17px;
+    .card p {
+      font-size: 20px;
+      line-height: 1.8;
+      margin: 0 auto 22px;
+      max-width: 860px;
+      color: #ffffff;
+    }
+
+    .small-card {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 22px;
+      padding: 24px;
+      margin-top: 18px;
+      text-align: center;
+    }
+
+    .small-card h3 {
+      margin-top: 0;
+      margin-bottom: 14px;
+      font-size: 26px;
+      color: #f4d1dc;
+    }
+
+    .small-card p {
+      font-size: 18px;
       line-height: 1.7;
-      max-width: 720px;
-      margin-left: auto;
-      margin-right: auto;
-      color: #f4e8eb;
+      margin: 0;
     }
 
     .button {
       display: inline-block;
-      background: #8f3d52;
-      color: white;
-      text-decoration: none;
+      margin-top: 12px;
       padding: 14px 24px;
       border-radius: 999px;
+      background: #9d5a73;
+      color: white;
+      text-decoration: none;
       font-weight: bold;
-      width: 100%;
-      max-width: 340px;
-      box-sizing: border-box;
-      transition: 0.2s;
-      margin-top: 14px;
+      font-size: 17px;
     }
 
     .button:hover {
-      background: #a94d63;
-      transform: scale(1.02);
+      background: #b96d89;
     }
 
     footer {
       text-align: center;
-      padding: 35px 20px;
-      color: #bdaab0;
+      padding: 30px 20px 40px;
+      color: rgba(255,255,255,0.72);
       font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      header {
+        padding-top: 115px;
+      }
+
+      .logo-ring {
+        width: 175px;
+        height: 175px;
+        margin-bottom: 22px;
+      }
+
+      h1 {
+        font-size: 38px;
+      }
+
+      .subtitle {
+        font-size: 17px;
+        line-height: 1.5;
+      }
+
+      .card {
+        padding: 28px 20px;
+      }
+
+      .card h2 {
+        font-size: 28px;
+      }
+
+      .card p {
+        font-size: 17px;
+        line-height: 1.8;
+      }
+
+      .small-card h3 {
+        font-size: 22px;
+      }
+
+      .small-card p {
+        font-size: 16px;
+      }
     }
   </style>
 </head>
-
 <body>
 
-<input type="checkbox" id="menu-toggle" class="menu-toggle">
+  <input type="checkbox" id="menu-toggle" class="menu-toggle">
 
-<label for="menu-toggle" class="hamburger">
-  <span></span>
-  <span></span>
-  <span></span>
-</label>
+  <label for="menu-toggle" class="hamburger" aria-label="Menü öffnen">
+    <span></span>
+    <span></span>
+    <span></span>
+  </label>
 
-<nav>
-  <a href="index.html">Startseite</a>
-  <a href="buch.html">Buch</a>
-  <a href="malbuch.html">Kreativbuch</a>
-  <a href="dark.html">Moments of Dark</a>
-  <a href="kontakt.html">Kontakt</a>
-</nav>
+  <nav>
+    <a href="index.html">Startseite</a>
+    <a href="buch.html">Kinderbücher</a>
+    <a href="malbuch.html">Kreativbuch</a>
+    <a href="dark.html">Moments of Dark</a>
+    <a href="kontakt.html">Kontakt</a>
+  </nav>
 
-<label for="menu-toggle" class="menu-overlay"></label>
+  <label for="menu-toggle" class="menu-overlay"></label>
 
-<header>
-  <img src="Mosdark.png" alt="Moments of Dark Logo" class="logo">
-  <h1>Moments of Dark</h1>
-  <p class="subtitle">Dunklere Geschichten, Thriller und Buchprojekte für Erwachsene</p>
-</header>
+  <header>
+    <div class="logo-ring">
+      <img src="Mosdark.png" alt="Moments of Dark Logo" class="logo">
+    </div>
 
-<main>
+    <h1>Moments of Dark</h1>
+    <p class="subtitle">Dunklere Geschichten, Thriller und Buchprojekte für Erwachsene</p>
+  </header>
 
-  <section class="box">
-    <h2>Willkommen bei Moments of Dark</h2>
-    <p>
-      Moments of Dark ist der Bereich für meine düsteren Buchprojekte, Psychothriller,
-      Dark Romance und Geschichten, die nicht für Kinder gedacht sind.
-    </p>
-    <p>
-      Hier entstehen später eigene Seiten zu meinen Erwachsenenbüchern, Charakteren,
-      Projekten und Veröffentlichungen.
-    </p>
-  </section>
+  <main>
+    <section class="card">
+      <h2>Willkommen bei Moments of Dark</h2>
+      <p>
+        Moments of Dark ist der Bereich für meine düsteren Buchprojekte, Psychothriller,
+        Dark Romance und Geschichten, die nicht für Kinder gedacht sind.
+      </p>
+      <p>
+        Hier entstehen später eigene Seiten zu meinen Erwachsenenbüchern, Charakteren,
+        Projekten und Veröffentlichungen.
+      </p>
+    </section>
 
-  <section class="box">
-    <h2>Hinweis</h2>
-    <p>
-      Dieser Bereich richtet sich an erwachsene Leserinnen und Leser. Kinderbücher,
-      Kreativbücher und die Glitzerfreunde findest du im Moments of Smile Kids Bereich.
-    </p>
+    <section class="card">
+      <h2>Thriller &amp; düstere Projekte</h2>
 
-    <a class="button" href="buch.html">
-      Zu den Kinderbüchern
-    </a>
-  </section>
+      <div class="small-card">
+        <h3>Demnächst mehr</h3>
+        <p>
+          Hier findest du später Infos zu meinen Projekten aus dem Bereich
+          Psychothriller, Dark Romance und weiteren düsteren Geschichten.
+        </p>
+      </div>
+    </section>
+  </main>
 
-</main>
+  <footer>
+    © 2026 Moments of Smile / Moments of Dark
+  </footer>
 
-<footer>
-  © 2026 Moments of Dark
-</footer>
-
-<!-- Cloudflare Web Analytics -->
-<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "6b6511cdbb4c4d9281f651eef4886800"}'></script>
-<!-- End Cloudflare Web Analytics -->
+  <!-- Cloudflare Web Analytics -->
+  <script defer src="https://static.cloudflareinsights.com/beacon.min.js"
+    data-cf-beacon='{"token": "6b6511cdbb4c4d9281f651eef4886800"}'></script>
 
 </body>
 </html>
