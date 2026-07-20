@@ -13,7 +13,6 @@
       color: #f4edf1;
     }
 
-    /* Burger Menü */
     .menu-toggle {
       display: none;
     }
@@ -141,6 +140,72 @@
       font-weight: 400;
     }
 
+    .book-card {
+      display: block;
+      background: rgba(255,255,255,0.08);
+      border-radius: 28px;
+      padding: 28px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+      text-decoration: none;
+      color: #f4edf1;
+      transition: 0.25s;
+      margin-bottom: 30px;
+    }
+
+    .book-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    }
+
+    .book-cover {
+      width: 100%;
+      max-width: 300px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+      margin-bottom: 22px;
+    }
+
+    .book-title {
+      color: #f0c6d0;
+      font-size: 28px;
+      margin: 8px 0 6px;
+      font-weight: 500;
+    }
+
+    .book-note {
+      color: #e8d8dd;
+      font-size: 17px;
+      margin: 0 0 16px;
+    }
+
+    .hint {
+      color: #f0c6d0;
+      font-weight: bold;
+      font-size: 16px;
+      margin-top: 12px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #8f3d52;
+      color: white;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: bold;
+      width: 100%;
+      max-width: 340px;
+      box-sizing: border-box;
+      transition: 0.2s;
+      margin-top: 14px;
+    }
+
+    .button:hover {
+      background: #a94d63;
+      transform: scale(1.02);
+    }
+
     footer {
       text-align: center;
       padding: 35px 20px;
@@ -165,7 +230,8 @@
         font-size: 16px;
       }
 
-      .box h2 {
+      .box h2,
+      .book-title {
         font-size: 25px;
       }
 
@@ -211,17 +277,29 @@
       Dark Romance und Geschichten, die nicht für Kinder gedacht sind.
     </p>
     <p>
-      Hier entstehen später eigene Seiten zu meinen Erwachsenenbüchern, Charakteren,
+      Hier findest du später mehr zu meinen Erwachsenenbüchern, Charakteren,
       Projekten und Veröffentlichungen.
     </p>
   </section>
 
+  <a href="letztes-match/" class="book-card">
+    <img src="Letztesmatchcover.jpg" alt="Cover Letztes Match" class="book-cover">
+
+    <h2 class="book-title">Letztes Match</h2>
+    <p class="book-note">Psychothriller</p>
+    <p class="hint">Hier geht’s zum Buch & später zu den Bestelllinks</p>
+  </a>
+
   <section class="box">
-    <h2>Thriller &amp; düstere Projekte</h2>
+    <h2>Fragen zum Buch?</h2>
     <p>
-      Hier findest du später mehr zu meinen düsteren Geschichten,
-      Figuren und Veröffentlichungen aus dem Bereich Moments of Dark.
+      Wenn du Fragen zu einem Buch, zu Moments of Dark oder zu einem meiner Projekte hast,
+      kannst du mir gerne eine E-Mail schreiben.
     </p>
+
+    <a class="button" href="mailto:moments_of_dark@web.de">
+      E-Mail schreiben
+    </a>
   </section>
 
 </main>
