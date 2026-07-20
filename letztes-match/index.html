@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letztes Match | Moments of Dark</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #151018, #2b1b25);
+      color: #f4edf1;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .hamburger {
+      position: fixed;
+      top: 18px;
+      left: 18px;
+      z-index: 1001;
+      width: 36px;
+      height: 28px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      display: block;
+      height: 4px;
+      background: #d8a0aa;
+      margin: 6px 0;
+      border-radius: 4px;
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: -270px;
+      width: 240px;
+      height: 100%;
+      background: #151018;
+      box-shadow: 4px 0 15px rgba(0,0,0,0.35);
+      padding-top: 80px;
+      transition: 0.3s;
+      z-index: 1000;
+    }
+
+    nav a {
+      display: block;
+      padding: 16px 24px;
+      color: #f0c6d0;
+      text-decoration: none;
+      font-weight: bold;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    nav a:hover {
+      background: rgba(255,255,255,0.08);
+    }
+
+    .menu-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.25);
+      z-index: 999;
+    }
+
+    .menu-toggle:checked ~ nav {
+      left: 0;
+    }
+
+    .menu-toggle:checked ~ .menu-overlay {
+      display: block;
+    }
+
+    header {
+      text-align: center;
+      padding: 45px 20px 25px;
+    }
+
+    .logo {
+      max-width: 190px;
+      width: 100%;
+      margin-bottom: 18px;
+      border-radius: 50%;
+      mix-blend-mode: lighten;
+      opacity: 0.95;
+    }
+
+    h1 {
+      color: #f0c6d0;
+      font-size: 38px;
+      margin: 0 0 10px;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #e8d8dd;
+      margin: 0 auto;
+      max-width: 720px;
+      line-height: 1.5;
+      font-weight: 400;
+    }
+
+    main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .book-box {
+      background: rgba(255,255,255,0.08);
+      border-radius: 28px;
+      padding: 28px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+      margin-bottom: 30px;
+    }
+
+    .cover {
+      width: 100%;
+      max-width: 330px;
+      border-radius: 18px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+      margin-bottom: 24px;
+    }
+
+    .book-title {
+      color: #f0c6d0;
+      font-size: 32px;
+      margin: 8px 0 6px;
+      font-weight: 500;
+    }
+
+    .genre {
+      color: #e8d8dd;
+      font-size: 18px;
+      margin-top: 0;
+      margin-bottom: 25px;
+    }
+
+    .description {
+      text-align: left;
+      font-size: 17px;
+      line-height: 1.7;
+      max-width: 720px;
+      margin: 0 auto 30px;
+      color: #f4edf1;
+    }
+
+    .order-title {
+      color: #f0c6d0;
+      margin-top: 35px;
+      margin-bottom: 15px;
+      font-size: 24px;
+      font-weight: 500;
+    }
+
+    .email-text {
+      display: inline-block;
+      color: #f0c6d0;
+      font-size: 18px;
+      font-weight: bold;
+      margin: 8px 0 12px;
+      word-break: break-all;
+    }
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      align-items: center;
+      margin-top: 15px;
+    }
+
+    .button {
+      display: inline-block;
+      background: #8f3d52;
+      color: white;
+      text-decoration: none;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: bold;
+      width: 100%;
+      max-width: 360px;
+      box-sizing: border-box;
+      transition: 0.2s;
+    }
+
+    .button:hover {
+      background: #a94d63;
+      transform: scale(1.02);
+    }
+
+    .button.secondary {
+      background: rgba(255,255,255,0.14);
+      color: #f4edf1;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 30px;
+      color: #f0c6d0;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 35px 20px;
+      color: #c8b8be;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding-top: 70px;
+      }
+
+      .logo {
+        max-width: 170px;
+      }
+
+      h1 {
+        font-size: 34px;
+      }
+
+      .book-title {
+        font-size: 28px;
+      }
+
+      .description {
+        font-size: 16px;
+      }
+
+      .email-text {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<input type="checkbox" id="menu-toggle" class="menu-toggle">
+
+<label for="menu-toggle" class="hamburger">
+  <span></span>
+  <span></span>
+  <span></span>
+</label>
+
+<nav>
+  <a href="../index.html">Startseite</a>
+  <a href="../buch.html">Buch</a>
+  <a href="../malbuch.html">Kreativbuch</a>
+  <a href="../dark.html">Moments of Dark</a>
+  <a href="../kontakt.html">Kontakt</a>
+</nav>
+
+<label for="menu-toggle" class="menu-overlay"></label>
+
+<header>
+  <img src="../Mosdark.png" alt="Moments of Dark Logo" class="logo">
+  <h1>Moments of Dark</h1>
+  <p class="subtitle">Dunklere Geschichten, Thriller und Buchprojekte für Erwachsene</p>
+</header>
+
+<main>
+  <section class="book-box">
+
+    <img src="../Letztesmatchcover.jpg" alt="Cover Letztes Match" class="cover">
+
+    <h2 class="book-title">Letztes Match</h2>
+    <p class="genre">Psychothriller</p>
+
+    <div class="description">
+      <p>
+        Ein Match. Ein Date. Und eine Wahrheit, die viel zu spät sichtbar wird.
+      </p>
+
+      <p>
+        In <strong>Letztes Match</strong> verschwimmen Vertrauen, Täuschung und Kontrolle.
+        Hinter einem scheinbar harmlosen Kennenlernen lauert etwas Dunkles – und wer einmal zu nah kommt,
+        merkt vielleicht erst viel zu spät, dass es keinen einfachen Ausweg mehr gibt.
+      </p>
+
+      <p>
+        Ein düsterer Psychothriller aus der Welt von Moments of Dark.
+      </p>
+    </div>
+
+    <h3 class="order-title">Bestellen kannst du das Buch bald hier:</h3>
+
+    <div class="buttons">
+      <span class="button secondary">Bestelllinks folgen bald</span>
+    </div>
+
+    <h3 class="order-title">Fragen zum Buch?</h3>
+
+    <p>
+      Du kannst mir gerne eine E-Mail schreiben:
+    </p>
+
+    <p class="email-text">moments_of_dark@web.de</p>
+
+    <div class="buttons">
+      <a class="button" href="mailto:moments_of_dark@web.de">
+        E-Mail schreiben
+      </a>
+    </div>
+
+    <a href="../dark.html" class="back-link">← Zurück zu Moments of Dark</a>
+
+  </section>
+</main>
+
+<footer>
+  © 2026 Moments of Dark
+</footer>
+
+<!-- Cloudflare Web Analytics -->
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon='{"token":"6b6511cdbb4c4d9281f651eef4886800"}'></script>
+<!-- End Cloudflare Web Analytics -->
+
+</body>
+</html>
